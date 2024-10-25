@@ -1,0 +1,420 @@
+src/components/PatientDashboard.css * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  height: 100vh;
+  background-color: #f7f7f7;
+  /* padding: 20px; */
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #272715; /* Dark background */
+  width: 250px;
+  height: 100vh;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.sidebar img {
+  width: 200px; /* Adjust size as needed */
+  height: 100px; /* Maintain a square ratio for circular shape */
+  /* This makes the image circular */
+  /* Ensures the image fits well inside the circle */
+}
+
+h3 {
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-menu ul li {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #4a4a4a; /* Background color for menu items */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-menu ul li a i {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.nav-menu ul li a:hover {
+  background-color: #23272a; /* Hover effect for the menu */
+}
+
+.nav-menu ul li a.active {
+  background-color: #7289da;
+}
+
+/* Main Content */
+.main-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout-button {
+  padding: 10px 20px;
+
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Patient Info Card */
+.patient-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Booking Slots */
+.slot-booking input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.slot-booking button {
+  padding: 10px 20px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Hours and Contact Section */
+.hours-contact {
+  height: 100vh;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.hours-contact h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Precaution Section */
+.precaution-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.precaution-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.precaution-section h3 {
+  font-size: 18px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.map {
+  margin: 20px 0;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Precaution Grid */
+.precautions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+/* General Container for the Middle Content */
+.main-content {
+  background-color: transparent; /* Keep the background transparent */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Patient Information Card */
+.patient-card {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Light white background with transparency */
+  backdrop-filter: blur(10px); /* Glassy effect */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+  height: 350px;
+  width: 500px;
+  background-image: url("../assets/pattern[1].png");
+  font-size: 20px;
+
+  align-self: center;
+}
+
+.patient-card .patient-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.patient-card .patient-info p {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Appointments List Card */
+.appointments-list {
+  background: rgba(255, 255, 255, 0.2); /* Same glassy effect */
+  backdrop-filter: blur(10px); /* Glassy effect */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+}
+
+.appointment-card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Light background for each appointment */
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Contact Section */
+.hours-contact {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Light white background with transparency */
+  backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hours-contact h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.hours-contact p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Slot Booking */
+.slot-booking {
+  background: rgba(255, 255, 255, 0.2); /* Light white background */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slot-booking h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.slot-booking input,
+.slot-booking select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.slot-booking button {
+  padding: 10px 20px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Map Section */
+.map {
+  margin: 20px 0;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.patient-card label {
+  display: block; /* Ensures the label takes up the full width */
+  margin-bottom: 8px; /* Adds space below the label */
+  font-size: 16px; /* Adjusts the label's font size */
+  color: #fff; /* Make sure label text is visible */
+}
+
+.patient-card input {
+  /* Full width input */
+  padding: 10px;
+  margin-bottom: 20px; /* Adds space below the input field */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.patient-card input:hover,
+.patient-card input:focus {
+  border: 1px solid #7289da;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.patient-card button {
+  padding: 12px 20px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.patient-card button:hover {
+  background-color: #555;
+}
+.edit-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.2); /* subtle background overlay */
+  backdrop-filter: blur(8px);
+}
+
+.edit-pprofile {
+  padding: 20px 40px;
+  margin-bottom: 200px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3); /* glassy background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* soft shadow */
+  max-width: 400px;
+  width: 100%;
+}
+
+.edit-pprofile label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.edit-pprofile input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.edit-pprofile input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.8);
+  outline: none;
+}
+
+.save {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #272715;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: black;
+}

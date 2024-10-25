@@ -1,0 +1,148 @@
+/* Styling for the Seasonal Advisory component */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars on the whole page */
+  font-family: "Arial", sans-serif; /* Clean font choice */
+  background-color: #f0f2f5; /* Light background to improve contrast */
+}
+
+.seasonal-advisory {
+  position: relative;
+  bottom: 100px;
+  max-width: 600px;
+  height: 90vh; /* Set a fixed height for internal scrolling */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable internal scrolling */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.seasonal-advisory h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 25px;
+  font-weight: 700; /* More bold for better emphasis */
+}
+
+label {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+select {
+  padding: 12px;
+  font-size: 1em;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #272715;
+  outline: none;
+}
+
+/* Disease card styling */
+.disease-card {
+  background-color: #f8f9fa;
+  color: #333;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 20px;
+  font-size: 1.1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for elegance */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.disease-card:hover {
+  transform: translateY(-5px); /* Smooth hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.disease-card h4 {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #272715; /* Accent color */
+}
+
+.disease-card p {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 1em;
+}
+
+/* Styling for the Precautions component */
+.precautions {
+  margin-top: 30px;
+  background-color: #f8f9fa;
+  color: #333;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.precautions:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.precautions h2 {
+  font-size: 1.6em;
+  color: #272715;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.precautions ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
+}
+
+.precautions li {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .seasonal-advisory {
+    width: 95%;
+    padding: 15px;
+    height: 80vh; /* Adjust height for smaller screens */
+    overflow-x: hidden; /* Ensure no horizontal scroll on mobile */
+  }
+
+  .disease-card,
+  .precautions {
+    padding: 15px;
+  }
+
+  select {
+    width: 100%;
+  }
+}
