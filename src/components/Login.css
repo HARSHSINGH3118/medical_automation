@@ -1,0 +1,99 @@
+/* Container for the entire login page */
+.login-page {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  /* Left side: Background image */
+  .login-left {
+    flex: 2; /* Takes up half the screen */
+    background-image: url("../assets/{1E447695-23BE-4514-9A94-0297FBDACAAE}.png"); /* Add the background image here */
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 20rem;
+  }
+  
+  /* Right side: Login form */
+  .login-right {
+    flex: 1; /* Takes up the other half of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  /* SRM Logo styling on top of the background */
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px; /* Adjust size as necessary */
+    height: auto;
+  }
+  
+  /* Content block for the form and quote */
+  .login-content {
+    width: 80%;
+    max-width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Quote styling */
+  .quote {
+    font-size: 15px;
+    color: #6b6861;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  
+  /* Style the login form */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .login-form input {
+    padding: 12px;
+    margin: 10px 0;
+    margin-left: 40px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 200px;
+  }
+  
+  .login-form button {
+    padding: 12px;
+    margin-left: 40px;
+    background-color: #494623;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .login-form button:hover {
+    background-color: #000000;
+  }
+  
+  /* Signup link */
+  p {
+    margin-top: 20px;
+  }
+  
+  .signup-link {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
