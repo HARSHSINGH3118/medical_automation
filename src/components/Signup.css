@@ -1,0 +1,105 @@
+/* src/components/Signup.css */
+
+/* Make SRM logo bigger */
+body {
+  background-color: #ffffff; /* Pure white background */
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px; /* Adjust this value to increase the size */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2; /* Ensure logo is on top of the background */
+}
+
+/* Container and alignment */
+.signup-container {
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff; /* Ensure pure white background */
+}
+
+/* Left section for the background image */
+.left-section {
+  width: 70%; /* Adjust width */
+  height: 100vh;
+  background-image: url("../assets/srmap-paari.jpg"); /* Replace with the correct path */
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  border-bottom-right-radius: 200px; /* Adjust to create a curved look without warping the image */
+  /* border-top-left-radius: 300px; Add a top curve */
+  overflow: hidden; /* Prevents image overflow */
+  position: relative;
+  background-color: #ffffff; /* Ensure background behind the image is pure white */
+}
+
+/* Adjust avatar if needed, but you can remove it for full background */
+.avatar {
+  display: none; /* Hides the avatar since you're using a full image */
+}
+
+/* Right section */
+.right-section {
+  width: 30%;
+  padding: 30px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+  color: #4a4a4a;
+}
+
+.signup-form input {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.signup-form button {
+  padding: 12px;
+  background-color: #494623;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signup-form button:hover {
+  background-color: #333;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #4a4a4a;
+}
