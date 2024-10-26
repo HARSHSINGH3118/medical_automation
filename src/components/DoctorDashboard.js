@@ -6,7 +6,7 @@ import {
   getDocs,
   updateDoc,
   getDoc,
-  doc, // Import `doc` correctly
+  doc, // Import doc correctly
 } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase";
@@ -186,7 +186,7 @@ const DoctorDashboard = () => {
                 <strong>Experience:</strong> {doctor?.experience || "N/A"} Years
               </p>
             </div>
-            <div className="stats-section">
+            <div className="stats-section2">
               <h4>Appointment Statistics</h4>
               <p>
                 <strong>Total Appointments:</strong> {totalAppointments}
