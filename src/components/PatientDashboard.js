@@ -189,174 +189,185 @@ const PatientDashboard = () => {
             Log Out
           </button>
         </div>
+        <div className="jankari">
+          {/* Profile Tab */}
+          {activeTab === "profile" && (
+            <div className="patient-card">
+              <div className="patient-info">
+                <h2>{patient?.fullName}</h2>
+                <p>
+                  <strong>SEAS B.Tech.</strong>
+                </p>
+                <p>Branch: {branch}</p>
+                <p>Hostel Name: {hostelName}</p>
+                <p>Room No: {roomNo}</p>
+                <p>Contact: {patient?.contactNumber}</p>
+                <p>Email: {patient?.email}</p>
+                <p>Gender: {gender}</p>
+              </div>
+            </div>
+          )}
 
-        {/* Profile Tab */}
-        {activeTab === "profile" && (
-          <div className="patient-card">
-            <div className="patient-info">
-              <h2>{patient?.fullName}</h2>
+          {/* Hours and Contact Section */}
+          {activeTab === "profile" && (
+            <div className="hours-contact">
+              <h3>Hours & Contact</h3>
               <p>
-                <strong>SEAS B.Tech.</strong>
+                OPD Service: Available from 8 AM to 5 PM on weekdays and from 9
+                AM to 1 PM on Saturdays.
               </p>
-              <p>Branch: {branch}</p>
-              <p>Hostel Name: {hostelName}</p>
-              <p>Room No: {roomNo}</p>
-              <p>Contact: {patient?.contactNumber}</p>
-              <p>Email: {patient?.email}</p>
-              <p>Gender: {gender}</p>
+              <p>
+                Emergency Service: 24x7 emergency services. Phone no:
+                0863-2343052
+              </p>
+              <p>Ambulance Service: 24/7 ambulance service is available.</p>
+              <p>
+                Pharmacy Service: 24/7 pharmacy for medications and
+                consultations.
+              </p>
             </div>
-          </div>
-        )}
-
-        {/* Edit Profile Tab */}
-        {activeTab === "editProfile" && (
-          <div className="edit-profile">
-            <div className="edit-pprofile">
-              <label>Hostel Name:</label>
-              <input
-                type="text"
-                value={hostelName}
-                onChange={(e) => setHostelName(e.target.value)}
-              />
-              <br />
-              <label>Room No:</label>
-              <input
-                type="text"
-                value={roomNo}
-                onChange={(e) => setRoomNo(e.target.value)}
-              />{" "}
-              <br />
-              <label>Branch:</label>
-              <input
-                type="text"
-                value={branch}
-                onChange={(e) => setBranch(e.target.value)}
-              />{" "}
-              <br />
-              <label>Section:</label>
-              <input
-                type="text"
-                value={section}
-                onChange={(e) => setSection(e.target.value)}
-              />{" "}
-              <br />
-              <label>Gender:</label>
-              <input
-                type="text"
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-              />{" "}
-              <br />
-              <button onClick={handleProfileUpdate} className="save">
-                Save Changes
-              </button>
+          )}
+        </div>
+        <div className="editandchange">
+          {/* Edit Profile Tab */}
+          {activeTab === "editProfile" && (
+            <div className="edit-profile">
+              <div className="edit-pprofile">
+                <label>Hostel Name:</label>
+                <input
+                  type="text"
+                  value={hostelName}
+                  onChange={(e) => setHostelName(e.target.value)}
+                />
+                <br />
+                <label>Room No:</label>
+                <input
+                  type="text"
+                  value={roomNo}
+                  onChange={(e) => setRoomNo(e.target.value)}
+                />{" "}
+                <br />
+                <label>Branch:</label>
+                <input
+                  type="text"
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
+                />{" "}
+                <br />
+                <label>Section:</label>
+                <input
+                  type="text"
+                  value={section}
+                  onChange={(e) => setSection(e.target.value)}
+                />{" "}
+                <br />
+                <label>Gender:</label>
+                <input
+                  type="text"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                />{" "}
+                <br />
+                <button onClick={handleProfileUpdate} className="save">
+                  Save Changes
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+        <div></div>
+        <div className="slot_booking">
+          {/* Book Slot Tab */}
+          {activeTab === "book" && (
+            <div className="slot-booking">
+              <h3>Book a Slot</h3>
+              <div>
+                <label>Symptoms</label>
+                <input
+                  type="text"
+                  placeholder="Enter symptoms"
+                  value={symptoms}
+                  onChange={(e) => setSymptoms(e.target.value)}
+                />
+              </div>
+              <div>
+                <label>Choose a Time Slot</label>
+                <input
+                  type="datetime-local"
+                  value={slotTime}
+                  onChange={(e) => setSlotTime(e.target.value)}
+                />
+              </div>
 
-        {/* Book Slot Tab */}
-        {activeTab === "book" && (
-          <div className="slot-booking">
-            <h3>Book a Slot</h3>
-            <div>
-              <label>Symptoms</label>
-              <input
-                type="text"
-                placeholder="Enter symptoms"
-                value={symptoms}
-                onChange={(e) => setSymptoms(e.target.value)}
-              />
+              {/* Doctor selection */}
+              <div>
+                <label>Select a Doctor</label>
+                <select
+                  value={selectedDoctorID}
+                  onChange={(e) => setSelectedDoctorID(e.target.value)}
+                >
+                  <option value="">-- Select Doctor --</option>
+                  {doctors.map((doctor) => (
+                    <option key={doctor.id} value={doctor.id}>
+                      {doctor.fullName}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <button onClick={handleBookSlot}>Book Slot</button>
+              <div>
+                {/* Display booked appointments */}
+                <div className="appointments-list">
+                  <h3>Your Appointments</h3>
+                  {appointments.length > 0 ? (
+                    appointments.map((appointment, index) => (
+                      <div key={index} className="appointment-card">
+                        <p>Symptoms: {appointment.symptoms}</p>
+                        <p>Slot Time: {appointment.slotTime}</p>
+                        <p>Status: {appointment.status}</p>
+                        {appointment.prescription && (
+                          <p>Prescription: {appointment.prescription}</p>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <p>No appointments booked yet.</p>
+                  )}
+                </div>
+              </div>
             </div>
-            <div>
-              <label>Choose a Time Slot</label>
-              <input
-                type="datetime-local"
-                value={slotTime}
-                onChange={(e) => setSlotTime(e.target.value)}
-              />
+          )}
+        </div>
+        <div className="api">
+          {/* Blog Tab */}
+          {activeTab === "blog" && (
+            <div className="blog-section">
+              <h3>Seasonal Advisory</h3>
+              <p>
+                <SeasonalAdvisory />
+              </p>
             </div>
-
-            {/* Doctor selection */}
-            <div>
-              <label>Select a Doctor</label>
-              <select
-                value={selectedDoctorID}
-                onChange={(e) => setSelectedDoctorID(e.target.value)}
-              >
-                <option value="">-- Select Doctor --</option>
-                {doctors.map((doctor) => (
-                  <option key={doctor.id} value={doctor.id}>
-                    {doctor.fullName}
-                  </option>
-                ))}
-              </select>
+          )}
+        </div>
+        <div className="location">
+          {/* Precautions Tab */}
+          {activeTab === "precautions" && (
+            <div className="precaution-section">
+              <h2>Contact SRM-AP</h2>
+              <h3>Address:</h3>
+              <h3>
+                SRM University- AP, Neerukonda, Mangalagiri Mandal Guntur
+                District, Andhra Pradesh-522240
+              </h3>
+              <h3>Contact : +91-863-2343000 / 080-6988-6999</h3>
+              <h3>Email: admissions@srmap.edu.in</h3>
+              <div className="map">
+                <MapComponent />
+              </div>
             </div>
-
-            <button onClick={handleBookSlot}>Book Slot</button>
-
-            {/* Display booked appointments */}
-            <div className="appointments-list">
-              <h3>Your Appointments</h3>
-              {appointments.length > 0 ? (
-                appointments.map((appointment, index) => (
-                  <div key={index} className="appointment-card">
-                    <p>Symptoms: {appointment.symptoms}</p>
-                    <p>Slot Time: {appointment.slotTime}</p>
-                    <p>Status: {appointment.status}</p>
-                    {appointment.prescription && (
-                      <p>Prescription: {appointment.prescription}</p>
-                    )}
-                  </div>
-                ))
-              ) : (
-                <p>No appointments booked yet.</p>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Blog Tab */}
-        {activeTab === "blog" && (
-          <div className="blog-section">
-            <h3>Seasonal Advisory</h3>
-            <p>
-              <SeasonalAdvisory />
-            </p>
-          </div>
-        )}
-
-        {/* Precautions Tab */}
-        {activeTab === "precautions" && (
-          <div className="precaution-section">
-            <h2>Contact SRM-AP</h2>
-            <h3>Address:</h3>
-            <h3>
-              SRM University- AP, Neerukonda, Mangalagiri Mandal Guntur
-              District, Andhra Pradesh-522240
-            </h3>
-            <h3>Contact : +91-863-2343000 / 080-6988-6999</h3>
-            <h3>Email: admissions@srmap.edu.in</h3>
-            <div className="map">
-              <MapComponent />
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Hours and Contact Section */}
-      <div className="hours-contact">
-        <h3>Hours & Contact</h3>
-        <p>
-          OPD Service: Available from 8 AM to 5 PM on weekdays and from 9 AM to
-          1 PM on Saturdays.
-        </p>
-        <p>
-          Emergency Service: 24x7 emergency services. Phone no: 0863-2343052
-        </p>
-        <p>Ambulance Service: 24/7 ambulance service is available.</p>
-        <p>
-          Pharmacy Service: 24/7 pharmacy for medications and consultations.
-        </p>
+          )}
+        </div>
       </div>
     </div>
   );

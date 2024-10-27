@@ -171,35 +171,38 @@ const DoctorDashboard = () => {
 
       {/* Right Section */}
       <div className="right">
-        {activeTab === "profile" && (
-          <>
-            <div className="profile-section">
-              <h4>Profile</h4>
-              <p>
-                <strong>Name:</strong> {doctor?.fullName}
-              </p>
-              <p>
-                <strong>Specialization:</strong>{" "}
-                {doctor?.specialization || "N/A"}
-              </p>
-              <p>
-                <strong>Experience:</strong> {doctor?.experience || "N/A"} Years
-              </p>
-            </div>
-            <div className="stats-section2">
-              <h4>Appointment Statistics</h4>
-              <p>
-                <strong>Total Appointments:</strong> {totalAppointments}
-              </p>
-              <p>
-                <strong>Accepted Appointments:</strong> {acceptedAppointments}
-              </p>
-              <p>
-                <strong>Pending Appointments:</strong> {pendingAppointments}
-              </p>
-            </div>
-          </>
-        )}
+        <div className="lekha_jokha">
+          {activeTab === "profile" && (
+            <>
+              <div className="profile-section">
+                <h4>Profile</h4>
+                <p>
+                  <strong>Name:</strong> {doctor?.fullName}
+                </p>
+                <p>
+                  <strong>Specialization:</strong>{" "}
+                  {doctor?.specialization || "N/A"}
+                </p>
+                <p>
+                  <strong>Experience:</strong> {doctor?.experience || "N/A"}{" "}
+                  Years
+                </p>
+              </div>
+              <div className="stats-section2">
+                <h4>Appointment Statistics</h4>
+                <p>
+                  <strong>Total Appointments:</strong> {totalAppointments}
+                </p>
+                <p>
+                  <strong>Accepted Appointments:</strong> {acceptedAppointments}
+                </p>
+                <p>
+                  <strong>Pending Appointments:</strong> {pendingAppointments}
+                </p>
+              </div>
+            </>
+          )}
+        </div>
 
         {activeTab === "appointments" && (
           <div className="rightmain">
