@@ -46,13 +46,13 @@ This project is licensed under Harsh Singh and Contributors.
 
 ![Screenshot (628)](https://github.com/user-attachments/assets/127bed68-775c-4382-9f39-8a0c89c62f34)
 ![Screenshot (629)](https://github.com/user-attachments/assets/88bc046b-2e6e-4bc1-a939-904e36452973)
-![Screenshot (630)](https://github.com/user-attachments/assets/72ee1c38-20be-47fe-bacc-6874d866a674)
+ ![Screenshot (638)](https://github.com/user-attachments/assets/a427dd8d-5dc3-445b-a944-0cb290cf1e6a)
 ![Screenshot (631)](https://github.com/user-attachments/assets/b752f7a1-dcec-4925-9735-ceba5785287c)
-![Screenshot (632)](https://github.com/user-attachments/assets/9dbbadd5-7554-47a2-be0c-2bf8245303dd)
-![Screenshot (633)](https://github.com/user-attachments/assets/8f7a669a-3108-4eb4-bfca-f6a7db251fd4)
-![Screenshot (634)](https://github.com/user-attachments/assets/06072a69-1a22-4456-9900-94c7e8efecc0)
+ ![Screenshot (633)](https://github.com/user-attachments/assets/8f7a669a-3108-4eb4-bfca-f6a7db251fd4)
+![Screenshot (640)](https://github.com/user-attachments/assets/38f5e7be-6e4f-4b4d-a9d1-e9c1577ceaf2)
 ![Screenshot (635)](https://github.com/user-attachments/assets/7f7d76b2-2757-439b-9402-862a1e50db3e)
-![Screenshot (636)](https://github.com/user-attachments/assets/eae676ab-6b02-4e9c-9105-bc6e1fd2def8)
+ ![Screenshot (642)](https://github.com/user-attachments/assets/3556ac73-56ab-4a30-bfc9-f7a5653472cf)
+
 
 
 ##Demo video
